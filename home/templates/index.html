@@ -1,33 +1,37 @@
-{% load static %}
-<!DOCKTYPE html>
-<html>
-    <head>
-        <title>TriftNG | Home</title>
-        <meta name="viewport" content="width= device-width, initial-scale= 1.0">
-        <meta charset="UTF-8">
-        <link rel="icon" type="image/icon-x" href="{% static 'nazicon.ico' %}">
-        <link rel="stylesheet" href="{% static 'styles.css' %}">
-    </head>
-    <body>
-        <header>
-            <h1>Otega Richard</h1>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About<a></a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </header>
-        <section class="home_page">
-            <h2>Welcome to my website</h2>
-        </section>
-        <footer>
-            <p>@ 2025 Richard Otega. All rights reserved.</p>
-            <ul>
-                <li><a href="twitter.com">Twitter</a></li>
-                <li><a href="Linkedin.com">LinkedIN</a></li>
-            </ul>
-        </footer>
-    </body>
-</html>
+{% extends 'base.htm' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="content_box">
+    <h2>Newest Items</h2>
+    
+    <div class="image_card">
+        {% for items in items %}
+        <div class="sections">
+        <a href="{% url 'item_app:detail' items.id %}">
+            <img src="{{items.image.url}}" alt="{{items.name}}">
+            <p><strong>{{items.name}}</strong></p>
+            <p>Price: ${{items.price}}</p>
+        </a>
+        </div>
+        {% endfor %}
+    </div>
+        
+</div>
+<br>
+<h2>Categories</h2> 
+<div class="category_box">
+    
+    {% for categories in categories %}
+    <div class="category_card">
+        <a href="#">
+            <p>{{categories.name}}</p>
+            <p>{{categories.items.count}}</p>
+        </a>
+    
+    </div>
+    {% endfor %}
+   
+    </div>
+{% endblock %}
