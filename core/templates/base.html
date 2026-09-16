@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>{% block title %}{% endblock %} | Thriftng</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The free and transparent online marketplace, connecting sellers and buyers across Nigeria.">
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://thrift.ng">
+        <meta property="og:title" content="Thriftng">
+        <meta property="og:description" content="The free and transparent online marketplace, connecting sellers and buyers across Nigeria.">
+        <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWpYAf9p578aOELEBFtQDhr45_vEJyAyat24ofpiInEw&s=10">
+
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script src="{% static 'app.js' %}" defer></script>
+
+    </head>
+
+    <body>
+        <header>
+            <nav aria-label="Main navigation">
+                <div class="logo"><a href="/"><span class="brand">Thriftng</span></a></div>
+                <div class="hamburger" id="hamburger" aria-expanded="false" aria-label="Toggle Navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">Create Listing</a></li>
+                </ul>
+                <div class="nav-cta" id="navCta">
+                    <a href="#" class="btn-sign-in">Sign In</a>
+                    <a href="#" class="btn-sign-up">Create Account</a>
+                </div>
+            </nav>
+        </header>
+        {% block content  %}
+        {% endblock %}
+        <footer>
+            <div class="footer-links">
+                <div class="logo">
+                    <a href="/"><span class="brand">Thriftng</span></a>
+                    <p>The free and transparent online marketplace, connecting sellers and buyers across Nigeria.</p>
+                </div>
+                <ul class="store-links">
+                    <li><a href="#">Browse</a></li>
+                    <li><a href="#">Create Listing</a></li>
+                </ul>
+                <ul class="res-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <p>&copy; 2026 Thriftng. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
