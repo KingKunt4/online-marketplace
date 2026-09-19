@@ -31,9 +31,11 @@
 body{
     background-color: var(--color-bg-page);
     color: var(--color-text-main);
+    font-family:Arial, Helvetica, sans-serif;
 
 }
 body a{ text-decoration: none; }
+body p{ font-size: 16px }
 header{
     width: 100%;
     padding: 0.625rem 1rem;
@@ -47,7 +49,7 @@ nav{
 }
 .brand{
     text-decoration: none;
-    font-family:monospace;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2rem;
     font-weight: 800;
     color: var(--color-pure-white);
@@ -110,6 +112,66 @@ nav{
     top: 8px;
 }
 
+footer{
+    padding: 20px;
+    background-color: var(--color-primary);
+}
+footer p{
+    color: var(--color-text-muted);
+    text-align: center;
+}
+footer .logo p{ text-align: initial;}
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.footer-links ul{
+    list-style: none;
+}
+.footer-links ul li a{
+    color: var(--color-text-on-primary);
+}
+
+.items{
+    background-color: var(--color-bg-page);
+    padding: 20px;
+}
+.items h1{ text-align: center; 
+    font-size: 1.2rem;         
+}
+.item-space{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-items: center;
+}
+.item-card{
+    background-color: var(--color-bg-surface);
+    width: calc(25vw - 20px);
+    height: auto;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.item-card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+.card-text{
+    padding: 10px;
+}
+.item-card a{
+    color: var(--color-text-main);
+    font-size: 1em;
+}
+
+
+
 @media(max-width: 768px){
     .hamburger{
         display: block;
@@ -151,56 +213,7 @@ nav{
         display: flex;
 
     }
-}
-footer{
-    padding: 20px;
-    background-color: var(--color-primary);
-}
-footer p{
-    color: var(--color-text-muted);
-    text-align: center;
-}
-footer .logo p{ text-align: initial;}
-.footer-links{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-.footer-links ul{
-    list-style: none;
-}
-.footer-links ul li a{
-    color: var(--color-text-on-primary);
-}
-
-.items{
-    background-color: var(--color-bg-page);
-    margin: 20px;
-    padding: 20px;
-}
-.items h1{ text-align: center; }
-.item-space{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-}
-.item-card{
-    background-color: var(--color-bg-surface);
-    max-width: 80%;
-    border-radius: 20px 20px 0 0;
-    margin-top: 10px;
-}
-.item-card img{
-    width: 400px;
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-}
-.card-text{
-    margin: 10px;
-}
-.item-card a{
-    color: var(--color-text-main)
+    .item-card{
+        width: calc(50% - 20px);
+    }
 }
