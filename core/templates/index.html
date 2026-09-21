@@ -7,13 +7,24 @@
         <div class="item-space">
             {% for item in items %}
                 <div class="item-card">
-                    <a href="#">
+                    <a href="{% url 'item:detail' item.id %}">
                         <div><img src="{{ item.image.url }}" alt="product image"></div>
                         <div class="card-text">
                             <p><strong>{{ item.name }}</strong></p>
                             <p>₦{{ item.price }}</p>
                         </div>
                     </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="categories">
+        <h1>Categories</h1>
+        <div class="category-space">
+            {% for category in categories %}
+                <div class="category-card">
+                    <p><strong>{{ category.name }}</strong></p>
+                    <p>{{ category.Items.count }} items</p>
                 </div>
             {% endfor %}
         </div>

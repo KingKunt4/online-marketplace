@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ item.name }}{% endblock %}
+{% block content %}
+    <div class="detail-card">
+        <div class="detail-image">
+            <img src="{{ item.image.url }}" alt="item image">
+        </div>
+        <div class="detail-text">
+            <p><strong>{{ item.name }}</strong></p>
+            <p>{{ item.price }}</p>
+            <hr>
+            <p>{{ item.description }}</p>
+        </div>
+    </div>
+{% endblock %}

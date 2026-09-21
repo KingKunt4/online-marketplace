@@ -29,7 +29,6 @@
     box-sizing: border-box;
 }
 body{
-    background-color: var(--color-bg-page);
     color: var(--color-text-main);
     font-family:Arial, Helvetica, sans-serif;
 
@@ -70,7 +69,7 @@ nav{
 }
 .nav-cta a{
     text-decoration: none;
-    padding: 1em 2em;
+    padding: 0.62em;
     border-radius: 10em;
     font-weight: 700;
 }
@@ -123,9 +122,9 @@ footer p{
 footer .logo p{ text-align: initial;}
 .footer-links{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 10px;
 }
 .footer-links ul{
@@ -137,30 +136,28 @@ footer .logo p{ text-align: initial;}
 
 .items{
     background-color: var(--color-bg-page);
-    padding: 20px;
+    padding: 20px 10px;
 }
 .items h1{ text-align: center; 
     font-size: 1.2rem;         
 }
 .item-space{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    align-items: flex-start;
 }
 .item-card{
     background-color: var(--color-bg-surface);
     width: calc(25vw - 20px);
-    height: auto;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 10px;
 }
 .item-card img{
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 20px 20px 0 0;
 }
 .card-text{
     padding: 10px;
@@ -170,8 +167,31 @@ footer .logo p{ text-align: initial;}
     font-size: 1em;
 }
 
-
-
+.categories{
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--color-bg-page);
+}
+.categories h1{
+    text-align: center; 
+    font-size: 1.2rem;
+}
+.category-space{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+}
+.category-card{
+    max-width: 400px;
+    background-color: var(--color-bg-surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 @media(max-width: 768px){
     .hamburger{
         display: block;
@@ -213,7 +233,10 @@ footer .logo p{ text-align: initial;}
         display: flex;
 
     }
+    .item-space{
+        grid-template-columns: repeat(2, 2fr);
+    }
     .item-card{
-        width: calc(50% - 20px);
+        width: calc(50vw - 20px);
     }
 }

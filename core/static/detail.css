@@ -1,0 +1,33 @@
+.detail-card{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+}
+.detail-image{
+    grid-row: span 3;
+    width: 30%;
+    
+}
+.detail-image img{
+    width: 100%;
+    object-fit: cover;
+}
+.detail-text{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+@media(max-width: 786px){
+    .detail-image{
+    width: 100%
+}
+    .detail-text{
+        width: 100%;
+
+    }
+}
