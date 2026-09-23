@@ -9,9 +9,26 @@
         </div>
         <div class="detail-text">
             <p><strong>{{ item.name }}</strong></p>
-            <p>{{ item.price }}</p>
+            <p>₦{{ item.price }}</p>
             <hr>
             <p>{{ item.description }}</p>
+        </div>
+    </div>
+
+    <div class="related-items">
+        <h2>Related items</h2>
+        <div class="related-item-space">
+            {% for item in related %}
+                <div class="related-item-card">
+                    <a href="{% url 'item:detail' item.id %}">
+                        <div><img src="{{ item.image.url }}" alt="product image"></div>
+                        <div class="card-text">
+                            <p><strong>{{ item.name }}</strong></p>
+                            <p>₦{{ item.price }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
