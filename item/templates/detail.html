@@ -9,10 +9,24 @@
         </div>
         <div class="detail-text">
             <p><strong>{{ item.name }}</strong></p>
-            <p>₦{{ item.price }}</p>
+            <p>Price: ₦{{ item.price }}</p>
+            <p>Seller: {{ item.created_by }}</p>
             <hr>
-            <p>{{ item.description }}</p>
+            <p><strong>Description: </strong>{{ item.description }}</p>
         </div>
+
+        {% if request.user == item.created_by %}
+            <div class="detail-action">
+                <p>This listing was created by you.</p>
+                <div class="action-btns">
+                    <a href="{% url 'item:delete' item.id %}" class="delete-btn">Delete</a>
+                    <a href="#" class="edit-btn">Edit</a>
+                </div>
+            </div>
+        {% else %}
+            <a href="#" class="contact-btn">Contact Seller</a>
+        {% endif %}
+        
     </div>
 
     <div class="related-items">

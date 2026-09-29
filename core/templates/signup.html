@@ -33,6 +33,8 @@
                     {% for field in form %}
                         {{ field.errors }}
                     {% endfor %}
+
+                    {{ form.non_field_errors }}
                 </div>
             {% endif %}
             <button type="submit" class="submit-btn">Sign up</button>

@@ -11,6 +11,8 @@
     --color-gray-800: #343a40;
     --color-gray-900: #212529;
 
+    --color-error: #fb1919;
+
     --color-primary: var(--color-green-500);
     --color-primary-hover: var(--color-green-600);
     --color-secondary: var(--color-cream-500);
@@ -70,7 +72,7 @@ nav{
 .nav-cta a{
     text-decoration: none;
     padding: 0.62em;
-    border-radius: 10em;
+    border-radius: 10px;
     font-weight: 700;
 }
 .btn-sign-in{

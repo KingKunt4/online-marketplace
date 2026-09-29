@@ -32,12 +32,12 @@
                 </div>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#">Browse</a></li>
-                    <li><a href="#">Create Listing</a></li>
+                    <li><a href="{% url 'item:new' %}">Create Listing</a></li>
                 </ul>
                 <div class="nav-cta" id="navCta">
                     {% if request.user.is_authenticated %}
-                        <a href="#">Dashboard</a>
-                        <a href="#">Inbox</a>
+                        <a href="#" class="btn-sign-in">Inbox</a>
+                        <a href="{% url 'dashboard:index' %}" class="btn-sign-up">Dashboard</a>
                     {% else %}
                         <a href="{% url 'core:login' %}" class="btn-sign-in">Sign In</a>
                         <a href="{% url 'core:signup' %}" class="btn-sign-up">Create Account</a>
@@ -57,7 +57,7 @@
                 </div>
                 <ul class="store-links">
                     <li><a href="#">Browse</a></li>
-                    <li><a href="#">Create Listing</a></li>
+                    <li><a href="{% url 'item:new' %}">Create Listing</a></li>
                 </ul>
                 <ul class="res-links">
                     <li><a href="#">About Us</a></li>
