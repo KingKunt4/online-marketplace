@@ -31,7 +31,7 @@
                     <span></span>
                 </div>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#">Browse</a></li>
+                    <li><a href="{% url 'item:index' %}">Browse</a></li>
                     <li><a href="{% url 'item:new' %}">Create Listing</a></li>
                 </ul>
                 <div class="nav-cta" id="navCta">
@@ -42,8 +42,16 @@
                         <a href="{% url 'core:login' %}" class="btn-sign-in">Sign In</a>
                         <a href="{% url 'core:signup' %}" class="btn-sign-up">Create Account</a>
                     {% endif %}
+                    <div class="mobile-filter">
+                        <div class="search-bar">
+                            <form method="GET" action="{% url 'item:index' %}">
+                                <input name="query" type="text" value="{{ query }}" placeholder="find an item...">
+                                <button class="search-btn" type="submit">search</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-
+                
                 
             </nav>
         </header>
@@ -56,7 +64,7 @@
                     <p>The free and transparent online marketplace, connecting sellers and buyers across Nigeria.</p>
                 </div>
                 <ul class="store-links">
-                    <li><a href="#">Browse</a></li>
+                    <li><a href="{% url 'item:index' %}">Browse</a></li>
                     <li><a href="{% url 'item:new' %}">Create Listing</a></li>
                 </ul>
                 <ul class="res-links">

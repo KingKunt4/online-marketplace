@@ -98,4 +98,7 @@ a{ color: var(--color-text-muted); }
         width: 100%;
 
     }
+    .detail-action{
+        width: 100%;
+    }
 }

@@ -2,12 +2,19 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 
 from .models import Item
-from .forms import newItemForm
+from .forms import newItemForm, editItemForm
+
+def index(request):
+    item = Item.objects.filter(is_sold=False)
+
+    return render(request, 'item/index.html', {
+        'item':item,
+    })
 
 def detail(request, pk):
     item = get_object_or_404(Item, pk=pk)
     related = Item.objects.filter(category=item.category, is_sold=False).exclude(pk=pk)[0:3]
-    return render(request, 'detail.html', {
+    return render(request, 'item/detail.html', {
         'item': item,
         'related': related
     })
@@ -26,7 +33,7 @@ def newListing(request):
     else:
         form = newItemForm()
 
-    return render(request, 'newlisting.html', {
+    return render(request, 'item/newlisting.html', {
         'form':form,
         'title':'New Listing',
     })
@@ -37,3 +44,21 @@ def delete(request, pk):
     item.delete()
 
     return redirect('dashboard:index')
+
+@login_required
+def edit(request, pk):
+    item = get_object_or_404(Item, pk=pk, created_by=request.user)
+    if request.method=='POST':
+        form = editItemForm(request.POST, request.FILES, instance=item)
+
+        if form.is_valid:    
+            form.save()
+            return redirect('item:detail', pk=item.id)
+            
+    else:
+        form = editItemForm(instance=item)
+
+    return render(request, 'item/newlisting.html', {
+        'form':form,
+        'title':'Edit Listing',
+    })
