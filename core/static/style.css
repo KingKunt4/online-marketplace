@@ -224,31 +224,33 @@ footer .logo p{ text-align: initial;}
     border: none;
     border-radius: 10px;
 }
-.mobile-filter{
-    padding: 1rem 0.2rem;
-}
-.search-bar form{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-    justify-content: space-between;
-}
-.search-bar input{
-    width: 80%;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-}
-.search-btn{
-    display: inline;
-    padding: 1rem;
-    font-weight: 700;
-    background-color: var(--color-primary);
-    color: var(--color-text-on-primary);
-    border: none;
-    border-radius: 10px;
+.category-filter{
+    margin: 1rem 0;
 }
 
+.filter ul{
+    list-style: none;
+    margin: none;
+}
+.filter ul li {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 6px;
+    border-radius: 10px;
+}
+.clear-filter{
+    margin: 1rem 0;
+}
+.clear-filter a{
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    color: var(--color-text-main);
+    font-weight: 700;
+}
+.mobile-filter{
+    display: none;
+}
 @media(max-width: 768px){
     .hamburger{
         display: block;
@@ -298,5 +300,40 @@ footer .logo p{ text-align: initial;}
     }
     .filter{
         display: none;
+    }
+    .mobile-filter{
+        display: block;
+        padding: 1rem 0.2rem;
+    }
+    .search-bar form{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .search-bar input{
+        width: 80%;
+        padding: 1rem;
+        border: none;
+        border-radius: 10px;
+    }
+    .search-btn{
+        display: inline;
+        padding: 1rem;
+        font-weight: 700;
+        background-color: var(--color-primary);
+        color: var(--color-text-on-primary);
+        border: none;
+        border-radius: 10px;
+    }
+    .mobile-filter ul{
+        list-style: none;
+        margin: 0;
+    }
+    .mobile-filter ul li a{
+        width: 100%;
+        padding: 6px;
+        border-radius: 10px;
+        color: var(--color-text-on-primary);
     }
 }

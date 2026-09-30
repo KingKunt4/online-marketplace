@@ -10,7 +10,26 @@
                     <button class="search-btn" type="submit">search</button>
                 </form>
             </div>
-        </div>
+                <div class="category-filter">
+                    <h3>Categories</h3>
+                    <ul>
+                        {% for category in categories %}
+                            <li {% if category.id == category_id %}style="background-color: #e9ecef; "{% endif %}>
+                                <a href="{% url 'item:index' %}?query={{ query }}&category={{ category.id }}">{{ category }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="clear-filter">
+                    <h3>Clear Filter</h3>
+                    <ul>
+                        <li>
+                            <a href="{% url 'item:index' %}">Clear</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>        
     
         <div class="items">
             <div class="item-space">

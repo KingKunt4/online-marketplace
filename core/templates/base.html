@@ -43,6 +43,15 @@
                         <a href="{% url 'core:signup' %}" class="btn-sign-up">Create Account</a>
                     {% endif %}
                     <div class="mobile-filter">
+                        <div class="category-filter">                            
+                            <ul>
+                                {% for category in categories %}
+                                    <li {% if category.id == category_id %}style="background-color: #e9ecef; "{% endif %}>
+                                        <a href="{% url 'item:index' %}?query={{ query }}&category={{ category.id }}">{{ category }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                         <div class="search-bar">
                             <form method="GET" action="{% url 'item:index' %}">
                                 <input name="query" type="text" value="{{ query }}" placeholder="find an item...">
