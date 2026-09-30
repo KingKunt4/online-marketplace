@@ -14,4 +14,4 @@ tzdata = "*"
 python_version = "3.13"
 
 [scripts]
-serve = "python manage.py runserver"
+server = "python manage.py runserver"
