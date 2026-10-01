@@ -1,0 +1,19 @@
+@import url("style.css");
+.message-space{
+    margin: 1rem 0;
+    padding: 1rem;
+}
+.message-card{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--color-gray-50);
+    margin: 1rem 0;
+}
+.message-card img{
+    width: 2rem;
+    object-fit: cover;
+    border-radius: 6px;
+}

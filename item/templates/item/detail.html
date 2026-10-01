@@ -24,7 +24,7 @@
                 </div>
             </div>
         {% else %}
-            <a href="#" class="contact-btn">Contact Seller</a>
+            <a href="{% url 'conversation:new' item.id %}" class="contact-btn">Contact Seller</a>
         {% endif %}
         
     </div>
