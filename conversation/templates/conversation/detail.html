@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+    <h1>Messages</h1>
+    <div class="message-space">
+        {% for message in chat.messages.all %}
+            <div class="message-card {% if message.created_by == request.user %}blue{% endif %}">
+                    <div class="card-text">
+                        <p><strong>{% if message.created_by == request.user %}you{% else %}{{ message.created_by.username }}{% endif %}</strong> @ {{ message.created_at }}</p>
+                        <p>{{ message.content }}</p>
+                    </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="auth-form">
+        <form method="post" action=".">
+            {% csrf_token %}
+    
+            {{ form.as_p }}
+    
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </div>
+{% endblock %}

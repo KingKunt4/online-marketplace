@@ -4,12 +4,12 @@
     <h1>Messages</h1>
     <div class="message-space">
         {% for convo in conversations %}
-        <a href="#">
+        <a href="{% url 'conversation:chat' convo.id %}">
             <div class="message-card">
                 
                     <div class="message-img"><img src="{{ convo.item.image.url }}" alt="product image"></div>
                     <div class="card-text">
-                        <p><strong>{% if convo.item.created_by == request.user %}you{% else %}{{ convo.item.created_by }}{% endif %}</strong> | {{ convo.item.created_at }}</p>
+                        <p><strong>{% if convo.item.created_by == request.user %}you{% else %}{{ convo.item.created_by }}{% endif %}</strong> | {{ convo.modified_at }}</p>
                         <p>{{ convo.item.name }}</p>
                     </div>
             </div>

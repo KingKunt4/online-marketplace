@@ -17,3 +17,6 @@
     object-fit: cover;
     border-radius: 6px;
 }
+.blue{
+    background-color: hwb(203 67% 3%);
+}

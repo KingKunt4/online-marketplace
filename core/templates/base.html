@@ -39,6 +39,10 @@
                     {% if request.user.is_authenticated %}
                         <a href="{% url 'conversation:inbox' %}" class="btn-sign-in">Inbox</a>
                         <a href="{% url 'dashboard:index' %}" class="btn-sign-up">Dashboard</a>
+                        <form method="post" action="{% url 'core:logout' %}"> 
+                            {% csrf_token %}
+                            <button type="submit" class="logout-btn">Logout</button>
+                        </form>
                     {% else %}
                         <a href="{% url 'core:login' %}" class="btn-sign-in">Sign In</a>
                         <a href="{% url 'core:signup' %}" class="btn-sign-up">Create Account</a>
@@ -65,8 +69,10 @@
                 
             </nav>
         </header>
+        <section class="content-block">
         {% block content  %}
         {% endblock %}
+        </section>
         <footer>
             <div class="footer-links">
                 <div class="logo">
@@ -76,6 +82,14 @@
                 <ul class="store-links">
                     <li><a href="{% url 'item:index' %}">Browse</a></li>
                     <li><a href="{% url 'item:new' %}">Create Listing</a></li>
+                    {% if request.user.is_authenticated %}
+                    <li><form method="post" action="{% url 'core:logout' %}"> 
+                        {% csrf_token %}
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form></li>
+                    {% else %}
+                    <li><a href="{% url 'core:login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
                 <ul class="res-links">
                     <li><a href="#">About Us</a></li>

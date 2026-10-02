@@ -131,11 +131,23 @@ footer .logo p{ text-align: initial;}
 }
 .footer-links ul{
     list-style: none;
+    padding: 0;
+    margin : 0;
 }
 .footer-links ul li a{
     color: var(--color-text-on-primary);
 }
-
+.logout-btn{
+    border: none;
+    background-color: transparent;
+    color: var(--color-text-on-primary);
+    padding: 0;
+    margin : 0;
+    font-size: 1rem;
+}
+.content-block{
+    min-height: 70vh;
+}
 .items{
     background-color: var(--color-bg-page);
     padding: 20px 10px;
@@ -230,7 +242,8 @@ footer .logo p{ text-align: initial;}
 
 .filter ul{
     list-style: none;
-    margin: none;
+    padding: 0;
+    margin : 0;
 }
 .filter ul li {
     width: 100%;
@@ -328,8 +341,8 @@ footer .logo p{ text-align: initial;}
     }
     .mobile-filter ul{
         list-style: none;
-        margin: 0;
         padding: 0;
+        margin : 0;
     }
     .mobile-filter ul li a{
         width: 100%;
